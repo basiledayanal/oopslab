@@ -1,75 +1,47 @@
+import java.lang.String;
 import java.util.Scanner;
-
-class employee {
-	int eno,esalary;
-	String ename;
-
-	public static void main(String[] args) {
-		 int flag=0,n,x,i;
+class employee{
+	int empid;
+	String name,address;
+	float salary;
+	employee(){
 		Scanner sc=new Scanner(System.in);
-		employee[] emp=new employee[50];
-		System.out.println("Enter the no of employees");
-		 n=sc.nextInt();
-		for(i=0;i<n;i++)
-		{
-			System.out.println("Enter Employee No:");
-			emp[i]=new employee();
-			emp[i].eno=sc.nextInt();
-			System.out.println("Enter Employee Salary:");
-			emp[i].esalary=sc.nextInt();
-			System.out.println("Enter Employee Name:");
-		    emp[i].ename=sc.next();
-		}
-		System.out.println("Enter the employee id you want to find :");
-		 x=sc.nextInt();
-		for(i=0;i<n;i++)
-		{
-			if(emp[i].eno==x)
-			{
-				 flag = 1;
-                break;
-			}
-			 else
-            {
-                flag = 0;
-            }
-        }
-        if(flag == 1)
-        {
-				System.out.println("Employee found at postion"  + (i + 1));
-        }
-        else
-        {
-            System.out.println("employee not found");
-        }
-    }
+		System.out.println("Enter empid salary name adress ");
+		this.empid=sc.nextInt();
+		this.salary=sc.nextFloat();
+		this.name=sc.next();
+		this.address=sc.next();
+	}
+	void display(){
+		System.out.printf("%5s%10s%10s%10s\n","empid", "salary", "name"," address");
+		System.out.printf("%5d%10.0f%10s%10s",empid,salary,name,address);
+	}
 }
-				
-
-
-basilalias@Basils-Mac-mini java % javac employee.java 
-basilalias@Basils-Mac-mini java % java employee
-Enter the no of employees
-			3
-			Enter Employee No:
-			1
-			Enter Employee Salary:
-			10000
-			Enter Employee Name:
-			arun
-			Enter Employee No:
-			2
-			Enter Employee Salary:
-			25000
-			Enter Employee Name:
-			bibin
-			Enter Employee No:
-			3
-			Enter Employee Salary:
-			50000
-			Enter Employee Name:
-			jobin
-
-			Enter the employee id you want to find :
-			3
-			Employee found at postion 3        
+class teacher extends employee{
+	String dept,subject;
+	teacher(){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("dept subject");
+		this.dept=sc.next();
+		this.subject=sc.next();
+	}
+	void display(){
+		
+		super.display();
+		System.out.println("\nDeaprtment\tSubject");
+		System.out.printf("%5s%17s\n",dept,subject);
+	}
+	public static void main(String ab[]){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the no of Employees");
+		int x=sc.nextInt();
+		teacher b[]=new teacher[x];
+		for (int i=0;i<x;i++){
+			 b[i]=new teacher();
+		}
+		for (int i=0;i<x;i++){
+			b[i].display();
+		}
+		
+	}
+}
