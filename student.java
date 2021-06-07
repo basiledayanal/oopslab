@@ -29,7 +29,7 @@ class Result extends Sports{
 		System.out.printf("%2d%8s%5s%8s%9d",roll,name,dept,category,points);
 	 }
 	public static void main(String ab[]){
-		Result b=new Result(12,"Abeel","mca","Relay",150);
+		Result b=new Result(12,"Basil","mca","Relay",150);
 		b.display();
 	}
 }
