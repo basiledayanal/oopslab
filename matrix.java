@@ -2,7 +2,7 @@ import java.util.Scanner;
 class matrix{
 	int a[][];
 	int r,c;
-	Matrix(int x,int y){
+	matrix(int x,int y){
 		this.r=x;
 		this.c=y;
 	}
