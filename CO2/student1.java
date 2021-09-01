@@ -24,7 +24,7 @@ marks=sc.nextInt();
 }}
 class result extends sports
 {
-void displ()
+void display()
  {
 System.out.println("Details of students are:");
 System.out.println("Name:"+name);
@@ -32,7 +32,7 @@ System.out.println("Roll number:"+roll);
 System.out.println("Class Name:"+classname);
 System.out.println("Academic Mark:"+mark);
 System.out.println("Sports Mark:"+marks);
- }
+}
 }
 public class student1 {
  public static void main(String ...a)
